@@ -10,7 +10,7 @@ namespace EierfarmBl
     {
         public Gans() : base("Neue Gans")
         {
-            this.Gewicht = 2000;
+            this.Weight = 2000;
         }
 
         public Gans(string name) : this()
@@ -20,19 +20,20 @@ namespace EierfarmBl
 
         public int Steuerkurs { get; set; }
 
-        public override void EiLegen()
+        public void EiLegen()
         {
-            if (this.Gewicht > 2000)
+            if (this.Weight > 2000)
             {
                 Ei ei = new Ei(this);
+                this.Eier.Add(ei);
             }
         }
 
         public override void Fressen()
         {
-            if (this.Gewicht < 5000)
+            if (this.Weight < 5000)
             {
-                this.Gewicht += 250;
+                this.Weight += 250;
             }
         }
     }

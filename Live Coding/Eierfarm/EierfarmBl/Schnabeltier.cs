@@ -5,20 +5,28 @@ using System.Text;
 
 namespace EierfarmBl
 {
-    public class Schnabeltier : Saeugetier, IEileger
+    public class Schnabeltier : Saeugetier, IEileger, IFresser
     {
-        public double Gewicht { get; set; }
+        public double Weight { get; set; }
 
         public List<Ei> Eier { get; set; }
+        public double MindestEiLegeGewicht { get; set; }
+
+        public event EventHandler<GefluegelEventArgs> EigenschaftGeaendert;
 
         public void EiLegen()
         {
-            if (this.Gewicht>2500)
+            if (this.Weight>2500)
             {
                 Ei ei = new(this);
-                this.Gewicht -= ei.Gewicht;
+                this.Weight -= ei.Gewicht;
                 this.Eier.Add(ei);
             }
+        }
+
+        public void Fressen()
+        {
+            throw new NotImplementedException();
         }
 
         public override void Saeugen()

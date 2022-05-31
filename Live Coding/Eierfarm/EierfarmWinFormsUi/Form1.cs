@@ -13,8 +13,16 @@ namespace EierfarmWinFormsUi
         {
             Huhn huhn = new();
 
+            huhn.EigenschaftGeaendert += this.Gefluegel_EigenschaftGeaendert;
+
             cbxTiere.Items.Add(huhn);
             cbxTiere.SelectedItem = huhn;
+        }
+
+        private void Gefluegel_EigenschaftGeaendert(object? sender, GefluegelEventArgs e)
+        {
+            //MessageBox.Show($"Tier {((Gefluegel)sender).Name} hat Eigenschaft {e.GeaenderteProperty} geändert.");
+            pgdTier.SelectedObject = (Gefluegel)sender;
         }
 
         private void cbxTiere_SelectedIndexChanged(object sender, EventArgs e)
@@ -25,6 +33,8 @@ namespace EierfarmWinFormsUi
         private void btnNeueGans_Click(object sender, EventArgs e)
         {
             Gans gans = new();
+
+            gans.EigenschaftGeaendert += Gefluegel_EigenschaftGeaendert;
 
             cbxTiere.Items.Add(gans);
             cbxTiere.SelectedItem = gans;
@@ -48,9 +58,16 @@ namespace EierfarmWinFormsUi
 
             if (tier != null)
             {
-                tier.EiLegen();
+                if (tier is Gans gans)
+                {
+                    gans.EiLegen(); // EiLegen aus der Gans
+                }
+                else
+                    tier.EiLegen(); // EiLegen aus IEileger, egal welcher konkrete Typ!
             }
 
         }
+
+
     }
 }
