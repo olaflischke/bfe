@@ -9,20 +9,37 @@ namespace TradingDayDal
 {
     public class Archive
     {
-        public Archive(string url)
+        /// <summary>
+        /// Konstruktor für ein Archive.
+        /// </summary>
+        /// <param name="url">URL einer GESMES-XML-Datei</param>
+        public Archive(string url, bool useRecords)
         {
-            this.TradingDays = GetData(url);
+            this.TradingDays = GetData(url, useRecords);
         }
 
-        private List<TradingDay>? GetData(string url)
+        private List<TradingDay>? GetData(string url, bool useRecords)
         {
             XDocument document = XDocument.Load(url);
 
-            var q = document.Root.Descendants()
-                               .Where(xe => xe.Name.LocalName == "Cube" && xe.Attributes().Any(at => at.Name == "time"))
-                               .Select(xe => new TradingDay(xe));
+            IEnumerable<TradingDay> q = null;
 
-            return q.ToList();
+            if (!useRecords)
+            {
+                q = document.Root?.Descendants()
+                          .Where(xe => xe.Name.LocalName == "Cube" && xe.Attributes().Any(at => at.Name == "time"))
+                          .Select(xe => new TradingDay(xe));
+
+            }
+            else
+            {
+                q = document.Root?.Descendants()
+          .Where(xe => xe.Name.LocalName == "Cube" && xe.Attributes().Any(at => at.Name == "time"))
+          .Select(xe => new TradingDay(xe, true));
+
+            }
+
+            return q?.ToList();
 
             //List<TradingDay> results = new List<TradingDay>();
 
@@ -36,6 +53,9 @@ namespace TradingDayDal
 
         }
 
-        public List<TradingDay> TradingDays { get; set; }
+        /// <summary>
+        /// Die TradingDays, die das Archive verwaltet
+        /// </summary>
+        public List<TradingDay>? TradingDays { get; set; }
     }
 }

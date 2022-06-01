@@ -38,9 +38,10 @@
             // 
             // btnNeuesHuhn
             // 
-            this.btnNeuesHuhn.Location = new System.Drawing.Point(503, 35);
+            this.btnNeuesHuhn.Location = new System.Drawing.Point(592, 41);
+            this.btnNeuesHuhn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNeuesHuhn.Name = "btnNeuesHuhn";
-            this.btnNeuesHuhn.Size = new System.Drawing.Size(188, 58);
+            this.btnNeuesHuhn.Size = new System.Drawing.Size(221, 68);
             this.btnNeuesHuhn.TabIndex = 0;
             this.btnNeuesHuhn.Text = "Huhn";
             this.btnNeuesHuhn.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // btnNeueGans
             // 
-            this.btnNeueGans.Location = new System.Drawing.Point(503, 99);
+            this.btnNeueGans.Location = new System.Drawing.Point(592, 116);
+            this.btnNeueGans.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNeueGans.Name = "btnNeueGans";
-            this.btnNeueGans.Size = new System.Drawing.Size(188, 58);
+            this.btnNeueGans.Size = new System.Drawing.Size(221, 68);
             this.btnNeueGans.TabIndex = 1;
             this.btnNeueGans.Text = "Gans";
             this.btnNeueGans.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // btnFuettern
             // 
-            this.btnFuettern.Location = new System.Drawing.Point(503, 451);
+            this.btnFuettern.Location = new System.Drawing.Point(592, 528);
+            this.btnFuettern.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFuettern.Name = "btnFuettern";
-            this.btnFuettern.Size = new System.Drawing.Size(188, 58);
+            this.btnFuettern.Size = new System.Drawing.Size(221, 68);
             this.btnFuettern.TabIndex = 2;
             this.btnFuettern.Text = "Füttern";
             this.btnFuettern.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // btnEiLegen
             // 
-            this.btnEiLegen.Location = new System.Drawing.Point(503, 515);
+            this.btnEiLegen.Location = new System.Drawing.Point(592, 603);
+            this.btnEiLegen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEiLegen.Name = "btnEiLegen";
-            this.btnEiLegen.Size = new System.Drawing.Size(188, 58);
+            this.btnEiLegen.Size = new System.Drawing.Size(221, 68);
             this.btnEiLegen.TabIndex = 3;
             this.btnEiLegen.Text = "Ei legen";
             this.btnEiLegen.UseVisualStyleBackColor = true;
@@ -80,31 +84,34 @@
             // 
             this.cbxTiere.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTiere.FormattingEnabled = true;
-            this.cbxTiere.Location = new System.Drawing.Point(106, 41);
+            this.cbxTiere.Location = new System.Drawing.Point(125, 48);
+            this.cbxTiere.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxTiere.Name = "cbxTiere";
-            this.cbxTiere.Size = new System.Drawing.Size(374, 49);
+            this.cbxTiere.Size = new System.Drawing.Size(439, 56);
             this.cbxTiere.TabIndex = 4;
             this.cbxTiere.SelectedIndexChanged += new System.EventHandler(this.cbxTiere_SelectedIndexChanged);
             // 
             // pgdTier
             // 
             this.pgdTier.HelpVisible = false;
-            this.pgdTier.Location = new System.Drawing.Point(106, 99);
+            this.pgdTier.Location = new System.Drawing.Point(125, 116);
+            this.pgdTier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pgdTier.Name = "pgdTier";
-            this.pgdTier.Size = new System.Drawing.Size(374, 473);
+            this.pgdTier.Size = new System.Drawing.Size(440, 554);
             this.pgdTier.TabIndex = 5;
             // 
             // frmEierfarm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 636);
+            this.ClientSize = new System.Drawing.Size(887, 745);
             this.Controls.Add(this.pgdTier);
             this.Controls.Add(this.cbxTiere);
             this.Controls.Add(this.btnEiLegen);
             this.Controls.Add(this.btnFuettern);
             this.Controls.Add(this.btnNeueGans);
             this.Controls.Add(this.btnNeuesHuhn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmEierfarm";
             this.Text = "Form1";
             this.ResumeLayout(false);

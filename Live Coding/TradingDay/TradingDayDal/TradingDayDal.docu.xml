@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TradingDayDal</name>
+    </assembly>
+    <members>
+        <member name="M:TradingDayDal.Archive.#ctor(System.String)">
+            <summary>
+            Konstruktor für ein Archive.
+            </summary>
+            <param name="url">URL einer GESMES-XML-Datei</param>
+        </member>
+        <member name="P:TradingDayDal.Archive.TradingDays">
+            <summary>
+            Die TradingDays, die das Archive verwaltet
+            </summary>
+        </member>
+    </members>
+</doc>

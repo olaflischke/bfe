@@ -4,6 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <DocumentationFile>C:\tmp\bfe\Live Coding\TradingDay\TradingDayDal\TradingDayDal.docu.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
