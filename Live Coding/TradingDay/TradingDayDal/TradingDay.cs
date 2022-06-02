@@ -34,14 +34,27 @@ namespace TradingDayDal
 
             NumberFormatInfo nfiEzb = new() { NumberDecimalSeparator = "." };
 
-            this.ExchangeRatesPositionalRecordStructs = tradingDayNode.Elements()
-                .Select(el => new ExchangeRatePositionalRecordStruct(el.Attribute("currency").Value, Convert.ToDouble(el.Attribute("rate").Value, nfiEzb)))
-                .ToList();
-
+            if (useRecords)
+            {
+                this.ExchangeRatesPositionalRecordStructs = tradingDayNode.Elements()
+                    .Select(el => new ExchangeRatePositionalRecordStruct(el.Attribute("currency").Value, Convert.ToDouble(el.Attribute("rate").Value, nfiEzb)))
+                    .ToList();
+            }
+            else
+            {
+                this.ExchangeRatesTuple = tradingDayNode.Elements()
+                    .Select(
+                        el => new Tuple<string, double>(
+                            el.Attribute("currency").Value, 
+                            Convert.ToDouble(el.Attribute("rate").Value, nfiEzb)
+                        )).ToList();
+            }
         }
 
         public DateOnly Date { get; set; }
         public List<ExchangeRate> ExchangeRates { get; set; }
         public List<ExchangeRatePositionalRecordStruct> ExchangeRatesPositionalRecordStructs { get; set; }
+
+        public List<Tuple<string, double>> ExchangeRatesTuple { get; set; }
     }
 }
