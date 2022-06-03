@@ -24,8 +24,8 @@ IEileger tier = new Huhn();
 
 switch (tier)
 {
-    case Huhn huhn:
-        Console.WriteLine($"Das Huhn heißt {huhn.Name}");
+    case Huhn huhn123:
+        Console.WriteLine($"Das Huhn heißt {huhn123.Name}");
         break;
     case Gans gans:
         break;
